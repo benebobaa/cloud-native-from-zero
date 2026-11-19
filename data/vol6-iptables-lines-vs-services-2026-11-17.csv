@@ -1,0 +1,5 @@
+services,kube_proxy_iptables_lines,cilium_iptables_lines
+0,117,89
+100,817,89
+300,2217,89
+600,4317,89

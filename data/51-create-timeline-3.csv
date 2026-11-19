@@ -1,0 +1,20 @@
+430,Pod,web3-596949f9dc-52ncf,ADDED,Terminating
+431,Pod,web3-596949f9dc-hz7fb,ADDED,Terminating
+433,Pod,web3-596949f9dc-rsf6t,ADDED,Terminating
+433,Pod,web3-596949f9dc-t7mrw,ADDED,Terminating
+434,Pod,web3-596949f9dc-xmfkg,ADDED,Terminating
+435,Pod,web3-596949f9dc-xqqz6,ADDED,Terminating
+1815,ReplicaSet,web3-596949f9dc,ADDED,replicas=0 ready=0
+1828,Pod,web3-596949f9dc-wb9zx,ADDED,Pending-unscheduled
+1837,Pod,web3-596949f9dc-xbrcw,ADDED,Pending-unscheduled
+1845,Pod,web3-596949f9dc-wb9zx,MODIFIED,ContainerCreating
+1845,Pod,web3-596949f9dc-8k5rz,ADDED,Pending-unscheduled
+1874,Pod,web3-596949f9dc-xbrcw,MODIFIED,ContainerCreating
+1874,Pod,web3-596949f9dc-8k5rz,MODIFIED,ContainerCreating
+1898,ReplicaSet,web3-596949f9dc,MODIFIED,replicas=3 ready=0
+3128,Pod,web3-596949f9dc-xbrcw,MODIFIED,Ready
+3169,ReplicaSet,web3-596949f9dc,MODIFIED,replicas=3 ready=1
+3262,Pod,web3-596949f9dc-8k5rz,MODIFIED,Ready
+3301,ReplicaSet,web3-596949f9dc,MODIFIED,replicas=3 ready=2
+3369,Pod,web3-596949f9dc-wb9zx,MODIFIED,Ready
+3399,ReplicaSet,web3-596949f9dc,MODIFIED,replicas=3 ready=3

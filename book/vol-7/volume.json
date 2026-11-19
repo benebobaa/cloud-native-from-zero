@@ -1,0 +1,86 @@
+{
+  "number": 7,
+  "slug": "vol-7",
+  "title": "Platform and Capstone",
+  "doc": "JmwgPsKS7xhEhYuAyseqmu",
+  "tabs": [
+    {
+      "slug": "overview",
+      "title": "Overview",
+      "kind": "overview",
+      "file": "f5106f7a-817c"
+    },
+    {
+      "slug": "ch-7-1",
+      "title": "Ch 7.1 · Helm, Kustomize and GitOps",
+      "kind": "chapter",
+      "file": "9cfcf050-32db"
+    },
+    {
+      "slug": "lab-7-1",
+      "title": "Lab 7.1",
+      "kind": "lab",
+      "file": "dd839cef-d05b",
+      "parent": "ch-7-1"
+    },
+    {
+      "slug": "review-7-1",
+      "title": "Review 7.1",
+      "kind": "review",
+      "file": "383004ff-b14f",
+      "parent": "ch-7-1"
+    },
+    {
+      "slug": "ch-7-2",
+      "title": "Ch 7.2 · Observability and SRE",
+      "kind": "chapter",
+      "file": "b763bd68-1c1d"
+    },
+    {
+      "slug": "lab-7-2",
+      "title": "Lab 7.2",
+      "kind": "lab",
+      "file": "025bc6de-e1b5",
+      "parent": "ch-7-2"
+    },
+    {
+      "slug": "review-7-2",
+      "title": "Review 7.2",
+      "kind": "review",
+      "file": "67037f60-0e97",
+      "parent": "ch-7-2"
+    },
+    {
+      "slug": "ch-7-3",
+      "title": "Ch 7.3 · Operators and Platforms",
+      "kind": "chapter",
+      "file": "1e6af459-f863"
+    },
+    {
+      "slug": "lab-7-3",
+      "title": "Lab 7.3",
+      "kind": "lab",
+      "file": "07dfc6cd-9d2c",
+      "parent": "ch-7-3"
+    },
+    {
+      "slug": "review-7-3",
+      "title": "Review 7.3",
+      "kind": "review",
+      "file": "57dac36e-7e7a",
+      "parent": "ch-7-3"
+    },
+    {
+      "slug": "capstone",
+      "title": "Capstone",
+      "kind": "milestone",
+      "file": "97346315-5ee4"
+    },
+    {
+      "slug": "glossary",
+      "title": "Glossary and References",
+      "kind": "glossary",
+      "file": "2d4b863e-eee0"
+    }
+  ]
+}

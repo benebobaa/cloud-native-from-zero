@@ -1,0 +1,13 @@
+case,run,gbit_s,retr
+node_to_node,1,4.00,298
+node_to_node,2,4.81,2678
+node_to_node,3,4.01,2109
+pod_mtu1450_vxlan,1,1.32,1783
+pod_mtu1450_vxlan,2,2.25,3202
+pod_mtu1450_vxlan,3,2.45,2848
+pod_mtu1500_icmp_allowed,1,1.63,4480
+pod_mtu1500_icmp_allowed,2,1.67,1
+pod_mtu1500_icmp_allowed,3,1.52,5343
+pod_mtu1500_icmp_dropped,1,0.00,4
+pod_mtu1500_icmp_dropped,2,0.00,4
+pod_mtu1500_icmp_dropped,3,0.00,4

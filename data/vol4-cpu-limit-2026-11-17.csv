@@ -1,0 +1,5 @@
+cpu_limit_cores,cores_used,throttled_periods_in_6s
+0.25,0.25,60
+0.5,0.50,60
+1.0,0.99,5
+none,0.99,0

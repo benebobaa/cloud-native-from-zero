@@ -9,6 +9,7 @@
 //          <out>/assets/book.css, <out>/vol-N/images/*
 // Pages assume <out> is one level below the site root (they link ../styles.css etc.).
 import { marked } from 'marked';
+import katex from 'katex';
 import { readFile, writeFile, mkdir, cp, rm, readdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
@@ -67,6 +68,18 @@ function makeRenderer(depth) {
   const baseTable = marked.Renderer.prototype.table;
   renderer.table = function (token) {
     return `<div class="table-wrap">${baseTable.call(this, token)}</div>\n`;
+  };
+  // ```latex blocks → MathML (rendered natively by browsers; no script or font download)
+  const baseCode = marked.Renderer.prototype.code;
+  renderer.code = function (token) {
+    if (token.lang === 'latex' || token.lang === 'tex') {
+      try {
+        return `<div class="math">${katex.renderToString(token.text, { displayMode: true, output: 'mathml', throwOnError: true })}</div>\n`;
+      } catch (e) {
+        warn(`latex failed (${e.message.split('\n')[0]}), shown as code: ${token.text.slice(0, 60)}`);
+      }
+    }
+    return baseCode.call(this, token);
   };
   const baseLink = marked.Renderer.prototype.link;
   renderer.link = function (token) {
@@ -159,7 +172,7 @@ ${body}
 `;
 }
 
-const KIND_LABEL = { overview: 'Overview', chapter: 'Theory', lab: 'Lab', review: 'Review', milestone: 'Milestone', glossary: 'Glossary', extra: '' };
+const KIND_LABEL = { overview: 'Overview', chapter: 'Theory', lab: 'Lab', review: 'Review', milestone: 'Milestone', glossary: 'Glossary', extra: '', group: 'Group', card: 'Card' };
 
 // ---------- build ----------------------------------------------------------
 await rm(OUT, { recursive: true, force: true });
@@ -176,17 +189,25 @@ for (const vol of published) {
   await mkdir(outDir, { recursive: true });
   if (existsSync(path.join(volDir, 'images'))) await cp(path.join(volDir, 'images'), path.join(outDir, 'images'), { recursive: true });
 
+  const isGuide = vol.kind === 'guide';
   const tabs = meta.tabs;
+  const bySlug = new Map(tabs.map((t) => [t.slug, t]));
   const fileOf = (t) => (t.kind === 'overview' ? 'index.html' : `${t.slug}.html`);
-  const volLabel = `Vol ${vol.number} · ${vol.title}`;
+  const volLabel = isGuide ? vol.title : `Vol ${vol.number} · ${vol.title}`;
+  const volShort = isGuide ? 'Field Guide' : `Vol ${vol.number}`;
 
   for (const [i, tab] of tabs.entries()) {
-    const mdPath = path.join(volDir, `${tab.slug}.md`);
-    if (!existsSync(mdPath)) { warn(`${vol.slug}/${tab.slug}: no markdown yet`); continue; }
-    const { title, html } = await renderMarkdown(await readFile(mdPath, 'utf8'), volDir, `${vol.slug}-${tab.slug}`, 2);
+    let title = null, html;
+    if (tab.hold) {
+      html = `<div class="callout note"><p class="callout-title">Being re-verified</p><p>${esc(tab.hold)}</p></div>`;
+    } else {
+      const mdPath = path.join(volDir, `${tab.slug}.md`);
+      if (!existsSync(mdPath)) { warn(`${vol.slug}/${tab.slug}: no markdown yet`); continue; }
+      ({ title, html } = await renderMarkdown(await readFile(mdPath, 'utf8'), volDir, `${vol.slug}-${tab.slug}`, 1));
+    }
 
     // chapter strip: Theory · Lab · Review for the chapter this tab belongs to
-    const chapterSlug = tab.kind === 'chapter' ? tab.slug : tab.parent;
+    const chapterSlug = tab.kind === 'chapter' ? tab.slug : (bySlug.get(tab.parent)?.kind === 'chapter' ? tab.parent : null);
     let strip = '';
     if (chapterSlug) {
       const family = tabs.filter((t) => t.slug === chapterSlug || t.parent === chapterSlug);
@@ -197,22 +218,33 @@ for (const vol of published) {
         .join('')}</nav>`;
     }
 
-    // volume contents on the overview page
+    // contents table on the overview page; a group page lists its cards
     let toc = '';
     if (tab.kind === 'overview') {
       const rows = tabs.filter((t) => t.kind !== 'overview' && !t.parent).map((t) => {
         const kids = tabs.filter((k) => k.parent === t.slug);
         return `<tr><td><a href="${fileOf(t)}"><strong>${esc(t.title)}</strong></a></td><td>${kids.map((k) => `<a href="${fileOf(k)}">${esc(k.title)}</a>`).join(' · ')}</td></tr>`;
       });
-      toc = `<section><h2 id="contents">Contents</h2><div class="table-wrap"><table><thead><tr><th>Part</th><th>Practice</th></tr></thead><tbody>${rows.join('')}</tbody></table></div></section>`;
+      const head = isGuide ? '<th>Group</th><th>Cards</th>' : '<th>Part</th><th>Practice</th>';
+      toc = `<section><h2 id="contents">Contents</h2><div class="table-wrap"><table><thead><tr>${head}</tr></thead><tbody>${rows.join('')}</tbody></table></div></section>`;
+    } else if (tab.kind === 'group') {
+      const kids = tabs.filter((k) => k.parent === tab.slug);
+      toc = `<section><h2 id="cards">Cards in this group</h2><ul>${kids.map((k) => `<li><a href="${fileOf(k)}">${esc(k.title)}</a></li>`).join('')}</ul></section>`;
     }
 
     const prev = tabs[i - 1], next = tabs[i + 1];
-    const pager = `<nav class="pager" aria-label="Previous and next">${prev ? `<a rel="prev" href="${fileOf(prev)}">← ${esc(prev.title)}</a>` : '<span></span>'}${next ? `<a rel="next" href="${fileOf(next)}">${esc(next.title)} →</a>` : `<a href="../index.html">All volumes →</a>`}</nav>`;
+    const pager = `<nav class="pager" aria-label="Previous and next">${prev ? `<a rel="prev" href="${fileOf(prev)}">← ${esc(prev.title)}</a>` : '<span></span>'}${next ? `<a rel="next" href="${fileOf(next)}">${esc(next.title)} →</a>` : `<a href="../index.html">The whole book →</a>`}</nav>`;
 
     const pageTitle = tab.kind === 'overview' ? volLabel : (title || tab.title);
-    const kicker = `<a href="../index.html">Cloud Native from Zero</a> · <a href="index.html">Vol ${vol.number}</a>${tab.kind === 'overview' ? '' : ` · ${esc(tab.title.split(' · ')[0])}`}`;
-    const description = `${tab.kind === 'overview' ? '' : `${tab.title} — `}Cloud Native from Zero, Vol ${vol.number}: ${vol.title}. A free, hands-on book from Linux to Kubernetes.`;
+    let crumb = '';
+    if (tab.kind === 'card') {
+      const g = bySlug.get(tab.parent);
+      crumb = ` · <a href="${fileOf(g)}">${esc(g.title.split(' · ')[1] || g.title)}</a>`;
+    } else if (tab.kind !== 'overview') {
+      crumb = ` · ${esc(isGuide ? (tab.title.split(' · ')[1] || tab.title) : tab.title.split(' · ')[0])}`;
+    }
+    const kicker = `<a href="../index.html">Cloud Native from Zero</a> · <a href="index.html">${volShort}</a>${crumb}`;
+    const description = `${tab.kind === 'overview' ? '' : `${tab.title} — `}Cloud Native from Zero, ${volLabel}. A free, hands-on book from Linux to Kubernetes.`;
     await writeFile(path.join(outDir, fileOf(tab)), page({
       depth: 1,
       title: pageTitle,
@@ -227,13 +259,18 @@ for (const vol of published) {
 
 // ---------- book index -----------------------------------------------------
 const intro = marked.parse(await readFile(path.join(ROOT, 'book/index.md'), 'utf8'), { gfm: true, renderer: makeRenderer(0) });
-const volRows = book.volumes.map((v) => `<tr id="${v.slug}"><td><code>${v.number}</code></td><td>${v.published ? `<a href="${v.slug}/index.html"><strong>${esc(v.title)}</strong></a>` : `<strong>${esc(v.title)}</strong>`}</td><td>${esc(v.summary)}</td><td class="meta">${v.published ? 'Published' : 'Coming'}</td></tr>`).join('');
+const row = (v, first) => `<tr id="${v.slug}"><td>${first}</td><td>${v.published ? `<a href="${v.slug}/index.html"><strong>${esc(v.title)}</strong></a>` : `<strong>${esc(v.title)}</strong>`}</td><td>${esc(v.summary)}</td><td class="meta">${v.published ? 'Published' : 'Coming'}</td></tr>`;
+const volRows = book.volumes.filter((v) => v.kind !== 'guide').map((v) => row(v, `<code>${v.number}</code>`)).join('');
+const guides = book.volumes.filter((v) => v.kind === 'guide');
+const guideSection = guides.length
+  ? `<section><h2 id="reference">Reference</h2><p>Keep this open while you work through Vol 5 to 7, and for exam practice.</p><div class="table-wrap"><table><thead><tr><th></th><th>Guide</th><th>What it is</th><th>Status</th></tr></thead><tbody>${guides.map((v) => row(v, '')).join('')}</tbody></table></div></section>`
+  : '';
 await writeFile(path.join(OUT, 'index.html'), page({
   depth: 0,
   title: book.title,
   description: book.description,
   kicker: `<a href="../learn.html">Learn</a> · Book`,
-  body: `<article class="book-body">${intro}</article><section><h2 id="volumes">The volumes</h2><div class="table-wrap"><table><thead><tr><th>#</th><th>Volume</th><th>What you learn</th><th>Status</th></tr></thead><tbody>${volRows}</tbody></table></div></section>`,
+  body: `<article class="book-body">${intro}</article><section><h2 id="volumes">The volumes</h2><div class="table-wrap"><table><thead><tr><th>#</th><th>Volume</th><th>What you learn</th><th>Status</th></tr></thead><tbody>${volRows}</tbody></table></div></section>${guideSection}`,
   canonical: 'cloud-native-from-zero/index.html',
 }));
 pages += 1;

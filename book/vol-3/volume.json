@@ -1,0 +1,86 @@
+{
+  "number": 3,
+  "slug": "vol-3",
+  "title": "Distributed Systems",
+  "doc": "6LUYVHiMoeAz7Lrj3eYao8",
+  "tabs": [
+    {
+      "slug": "overview",
+      "title": "Overview",
+      "kind": "overview",
+      "file": "488d2857-7ef1"
+    },
+    {
+      "slug": "ch-3-1",
+      "title": "Ch 3.1 · Failure and CAP",
+      "kind": "chapter",
+      "file": "3c16164d-74e4"
+    },
+    {
+      "slug": "lab-3-1",
+      "title": "Lab 3.1",
+      "kind": "lab",
+      "file": "8c79f767-a9e1",
+      "parent": "ch-3-1"
+    },
+    {
+      "slug": "review-3-1",
+      "title": "Review 3.1",
+      "kind": "review",
+      "file": "76f7a5e1-7bdb",
+      "parent": "ch-3-1"
+    },
+    {
+      "slug": "ch-3-2",
+      "title": "Ch 3.2 · Raft and etcd",
+      "kind": "chapter",
+      "file": "b178d903-eb1a"
+    },
+    {
+      "slug": "lab-3-2",
+      "title": "Lab 3.2",
+      "kind": "lab",
+      "file": "1a36bf14-567d",
+      "parent": "ch-3-2"
+    },
+    {
+      "slug": "review-3-2",
+      "title": "Review 3.2",
+      "kind": "review",
+      "file": "4cf0b5ff-8eb2",
+      "parent": "ch-3-2"
+    },
+    {
+      "slug": "ch-3-3",
+      "title": "Ch 3.3 · Control Loops",
+      "kind": "chapter",
+      "file": "4f8277a0-0ebc"
+    },
+    {
+      "slug": "lab-3-3",
+      "title": "Lab 3.3",
+      "kind": "lab",
+      "file": "a6ee8337-f6e8",
+      "parent": "ch-3-3"
+    },
+    {
+      "slug": "review-3-3",
+      "title": "Review 3.3",
+      "kind": "review",
+      "file": "4e62b2a6-8dc2",
+      "parent": "ch-3-3"
+    },
+    {
+      "slug": "milestone-3",
+      "title": "Milestone 3",
+      "kind": "milestone",
+      "file": "aa5d649e-db26"
+    },
+    {
+      "slug": "glossary",
+      "title": "Glossary and References",
+      "kind": "glossary",
+      "file": "e07176f5-3e53"
+    }
+  ]
+}

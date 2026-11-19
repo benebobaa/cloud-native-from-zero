@@ -429,3 +429,15 @@ figure.diagram svg { display: block; width: 100%; height: auto; }
   font-size: var(--step--1);
 }
 .pager a[rel="next"], .pager a:last-child { text-align: right; }
+
+/* Formulas (MathML from ```latex blocks) */
+.book-body .math { margin: 1rem 0; overflow-x: auto; font-size: 1.1em; }
+
+/* Screenshots of real UIs: shown in greyscale to keep the site black and white. */
+.book-body img { filter: grayscale(1); }
+
+/* Long commands, URLs and field paths in running text wrap instead of widening the page on phones. */
+.book-body :not(pre) > code { overflow-wrap: anywhere; }
+.book-body a { overflow-wrap: anywhere; }
+/* Long single-word titles (CustomResourceDefinition) break instead of overflowing. */
+.page h1, .page h2, .page h3 { overflow-wrap: break-word; }

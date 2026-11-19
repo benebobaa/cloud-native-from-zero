@@ -1,0 +1,87 @@
+{
+  "number": 6,
+  "slug": "vol-6",
+  "title": "Kubernetes Networking and Security",
+  "doc": "2Fif8HAYB7QKpn1SRavBmk",
+  "tabs": [
+    {
+      "slug": "overview",
+      "title": "Overview",
+      "kind": "overview",
+      "file": "e3617c98-879b"
+    },
+    {
+      "slug": "ch-6-1",
+      "title": "Ch 6.1 · CNI and Cilium",
+      "kind": "chapter",
+      "file": "9dd37b17-d31d"
+    },
+    {
+      "slug": "lab-6-1",
+      "title": "Lab 6.1",
+      "kind": "lab",
+      "file": "453b5263-af66",
+      "parent": "ch-6-1"
+    },
+    {
+      "slug": "review-6-1",
+      "title": "Review 6.1",
+      "kind": "review",
+      "file": "72e92694-5bd3",
+      "parent": "ch-6-1"
+    },
+    {
+      "slug": "ch-6-2",
+      "title": "Ch 6.2 · Gateway API and Mesh",
+      "kind": "chapter",
+      "file": "a13ebc6f-32a4"
+    },
+    {
+      "slug": "lab-6-2",
+      "title": "Lab 6.2",
+      "kind": "lab",
+      "file": "c328bf35-98a3",
+      "parent": "ch-6-2"
+    },
+    {
+      "slug": "review-6-2",
+      "title": "Review 6.2",
+      "kind": "review",
+      "file": "af5abab8-8be2",
+      "parent": "ch-6-2"
+    },
+    {
+      "slug": "ch-6-3",
+      "title": "Ch 6.3 · Security",
+      "kind": "chapter",
+      "file": "7298808e-afe8"
+    },
+    {
+      "slug": "lab-6-3",
+      "title": "Lab 6.3",
+      "kind": "lab",
+      "file": "92d80867-affa",
+      "parent": "ch-6-3"
+    },
+    {
+      "slug": "review-6-3",
+      "title": "Review 6.3",
+      "kind": "review",
+      "file": "66573684-c7be",
+      "parent": "ch-6-3"
+    },
+    {
+      "slug": "milestone-6",
+      "title": "Milestone 6",
+      "kind": "milestone",
+      "file": "b78a7a7f-165b",
+      "hold": "The reference solution for this milestone passed 17 of 18 checks on a real cluster; the last fix is waiting for a clean re-run on Linux. This page goes up once all 18 pass."
+    },
+    {
+      "slug": "glossary",
+      "title": "Glossary and References",
+      "kind": "glossary",
+      "file": "62efc47e-67ed"
+    }
+  ]
+}

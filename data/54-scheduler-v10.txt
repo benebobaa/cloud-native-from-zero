@@ -1,0 +1,18 @@
+07:48:38.121000 schedule_one.go:117] "Attempting to schedule pod" pod="default/newcomer"
+07:48:38.122432 taint_toleration.go:132] "node had untolerated taints" logger="FilterWithNominatedPods.Filter.TaintToleration" pod="default/newcomer" node="cnlab-vol5-control-plane" untoleratedTaint={"key":"node-role.kubernetes.io
+07:48:38.123484 schedule_one.go:984] "Plugin scored node for pod" pod="default/newcomer" plugin="TaintToleration" node="cnlab-vol5-worker" score=300
+07:48:38.123548 schedule_one.go:984] "Plugin scored node for pod" pod="default/newcomer" plugin="NodeResourcesFit" node="cnlab-vol5-worker" score=62
+07:48:38.123666 schedule_one.go:984] "Plugin scored node for pod" pod="default/newcomer" plugin="VolumeBinding" node="cnlab-vol5-worker" score=0
+07:48:38.123672 schedule_one.go:984] "Plugin scored node for pod" pod="default/newcomer" plugin="DynamicResources" node="cnlab-vol5-worker" score=0
+07:48:38.123677 schedule_one.go:984] "Plugin scored node for pod" pod="default/newcomer" plugin="NodeResourcesBalancedAllocation" node="cnlab-vol5-worker" score=73
+07:48:38.123684 schedule_one.go:984] "Plugin scored node for pod" pod="default/newcomer" plugin="ImageLocality" node="cnlab-vol5-worker" score=0
+07:48:38.123689 schedule_one.go:984] "Plugin scored node for pod" pod="default/newcomer" plugin="TaintToleration" node="cnlab-vol5-worker2" score=300
+07:48:38.123694 schedule_one.go:984] "Plugin scored node for pod" pod="default/newcomer" plugin="NodeResourcesFit" node="cnlab-vol5-worker2" score=89
+07:48:38.123700 schedule_one.go:984] "Plugin scored node for pod" pod="default/newcomer" plugin="VolumeBinding" node="cnlab-vol5-worker2" score=0
+07:48:38.123704 schedule_one.go:984] "Plugin scored node for pod" pod="default/newcomer" plugin="DynamicResources" node="cnlab-vol5-worker2" score=0
+07:48:38.123709 schedule_one.go:984] "Plugin scored node for pod" pod="default/newcomer" plugin="NodeResourcesBalancedAllocation" node="cnlab-vol5-worker2" score=73
+07:48:38.123713 schedule_one.go:984] "Plugin scored node for pod" pod="default/newcomer" plugin="ImageLocality" node="cnlab-vol5-worker2" score=0
+07:48:38.123724 schedule_one.go:1052] "Calculated node's final score for pod" pod="default/newcomer" node="cnlab-vol5-worker" score=435
+07:48:38.123730 schedule_one.go:1052] "Calculated node's final score for pod" pod="default/newcomer" node="cnlab-vol5-worker2" score=462
+07:48:38.124066 default_binder.go:70] "Attempting to bind pod to node" logger="Bind.DefaultBinder" pod="default/newcomer" node="cnlab-vol5-worker2"
+07:48:38.139460 round_trippers.go:632] "Response" logger="Bind.DefaultBinder" pod="default/newcomer" verb="POST" url="https://172.21.0.4:6443/api/v1/namespaces/default/pods/newcomer/binding" status="201 Created" headers=<

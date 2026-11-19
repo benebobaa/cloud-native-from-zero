@@ -1,0 +1,730 @@
+{
+  "number": null,
+  "slug": "field-guide",
+  "title": "Kubernetes Field Guide",
+  "doc": "SVS4bm5LuQDWgJYjp8gMd7",
+  "tabs": [
+    {
+      "slug": "overview",
+      "title": "How to use",
+      "kind": "overview",
+      "file": "94795e7b-5878"
+    },
+    {
+      "slug": "g01-architecture",
+      "title": "1 · Architecture",
+      "kind": "group",
+      "file": "018a6502-cfde"
+    },
+    {
+      "slug": "kube-apiserver",
+      "title": "kube-apiserver",
+      "kind": "card",
+      "file": "3a8f6785-633e",
+      "parent": "g01-architecture"
+    },
+    {
+      "slug": "etcd",
+      "title": "etcd",
+      "kind": "card",
+      "file": "4c80bcd4-d176",
+      "parent": "g01-architecture"
+    },
+    {
+      "slug": "kube-scheduler",
+      "title": "kube-scheduler",
+      "kind": "card",
+      "file": "62ad4312-1e58",
+      "parent": "g01-architecture"
+    },
+    {
+      "slug": "kube-controller-manager-and-its-controllers",
+      "title": "kube-controller-manager and its controllers",
+      "kind": "card",
+      "file": "13c03b88-9b66",
+      "parent": "g01-architecture"
+    },
+    {
+      "slug": "cloud-controller-manager",
+      "title": "cloud-controller-manager",
+      "kind": "card",
+      "file": "affe1222-9974",
+      "parent": "g01-architecture"
+    },
+    {
+      "slug": "kubelet",
+      "title": "kubelet",
+      "kind": "card",
+      "file": "6d264e50-ecb1",
+      "parent": "g01-architecture"
+    },
+    {
+      "slug": "kube-proxy",
+      "title": "kube-proxy",
+      "kind": "card",
+      "file": "569b5b8a-e6a3",
+      "parent": "g01-architecture"
+    },
+    {
+      "slug": "container-runtime-cri",
+      "title": "Container runtime (CRI)",
+      "kind": "card",
+      "file": "0f50d2bc-5fe4",
+      "parent": "g01-architecture"
+    },
+    {
+      "slug": "cni-and-csi-plug-ins",
+      "title": "CNI and CSI plug-ins",
+      "kind": "card",
+      "file": "008b845d-149c",
+      "parent": "g01-architecture"
+    },
+    {
+      "slug": "coredns-and-cluster-add-ons",
+      "title": "CoreDNS and cluster add-ons",
+      "kind": "card",
+      "file": "9882706e-8e93",
+      "parent": "g01-architecture"
+    },
+    {
+      "slug": "kubeadm-and-cluster-bootstrap",
+      "title": "kubeadm and cluster bootstrap",
+      "kind": "card",
+      "file": "0284aa81-f16a",
+      "parent": "g01-architecture"
+    },
+    {
+      "slug": "g02-api-machinery",
+      "title": "2 · API machinery",
+      "kind": "group",
+      "file": "bfaff182-0576"
+    },
+    {
+      "slug": "objects-spec-and-status",
+      "title": "Objects, spec and status",
+      "kind": "card",
+      "file": "784f8cc4-c406",
+      "parent": "g02-api-machinery"
+    },
+    {
+      "slug": "labels-selectors-and-annotations",
+      "title": "Labels, selectors and annotations",
+      "kind": "card",
+      "file": "9c221661-1c97",
+      "parent": "g02-api-machinery"
+    },
+    {
+      "slug": "namespace",
+      "title": "Namespace",
+      "kind": "card",
+      "file": "c10d25e7-1fcf",
+      "parent": "g02-api-machinery"
+    },
+    {
+      "slug": "owner-references-and-garbage-collection",
+      "title": "Owner references and garbage collection",
+      "kind": "card",
+      "file": "3a6b7ff5-9d90",
+      "parent": "g02-api-machinery"
+    },
+    {
+      "slug": "finalizers",
+      "title": "Finalizers",
+      "kind": "card",
+      "file": "035a9ff1-be96",
+      "parent": "g02-api-machinery"
+    },
+    {
+      "slug": "watch-and-resourceversion",
+      "title": "Watch and resourceVersion",
+      "kind": "card",
+      "file": "2c483ab4-0de1",
+      "parent": "g02-api-machinery"
+    },
+    {
+      "slug": "server-side-apply-and-field-managers",
+      "title": "Server-side apply and field managers",
+      "kind": "card",
+      "file": "bd3da007-4fae",
+      "parent": "g02-api-machinery"
+    },
+    {
+      "slug": "api-groups-versions-and-deprecation",
+      "title": "API groups, versions and deprecation",
+      "kind": "card",
+      "file": "d9b30d27-7d4e",
+      "parent": "g02-api-machinery"
+    },
+    {
+      "slug": "event",
+      "title": "Event",
+      "kind": "card",
+      "file": "cad42e90-e1e5",
+      "parent": "g02-api-machinery"
+    },
+    {
+      "slug": "lease",
+      "title": "Lease",
+      "kind": "card",
+      "file": "4ed142a1-2ce7",
+      "parent": "g02-api-machinery"
+    },
+    {
+      "slug": "api-priority-and-fairness",
+      "title": "API Priority and Fairness",
+      "kind": "card",
+      "file": "88bef61e-661e",
+      "parent": "g02-api-machinery"
+    },
+    {
+      "slug": "g03-workloads",
+      "title": "3 · Workloads",
+      "kind": "group",
+      "file": "a09244b3-dc15"
+    },
+    {
+      "slug": "pod",
+      "title": "Pod",
+      "kind": "card",
+      "file": "e7df8c98-092c",
+      "parent": "g03-workloads"
+    },
+    {
+      "slug": "pod-lifecycle-and-probes",
+      "title": "Pod lifecycle and probes",
+      "kind": "card",
+      "file": "8af62817-4a51",
+      "parent": "g03-workloads"
+    },
+    {
+      "slug": "init-and-sidecar-containers",
+      "title": "Init and sidecar containers",
+      "kind": "card",
+      "file": "59cd001e-db08",
+      "parent": "g03-workloads"
+    },
+    {
+      "slug": "replicaset",
+      "title": "ReplicaSet",
+      "kind": "card",
+      "file": "a0cb6739-fb0e",
+      "parent": "g03-workloads"
+    },
+    {
+      "slug": "deployment",
+      "title": "Deployment",
+      "kind": "card",
+      "file": "7869d8f5-b1bd",
+      "parent": "g03-workloads"
+    },
+    {
+      "slug": "statefulset",
+      "title": "StatefulSet",
+      "kind": "card",
+      "file": "2e203190-0a63",
+      "parent": "g03-workloads"
+    },
+    {
+      "slug": "daemonset",
+      "title": "DaemonSet",
+      "kind": "card",
+      "file": "808dbab1-1f0d",
+      "parent": "g03-workloads"
+    },
+    {
+      "slug": "job",
+      "title": "Job",
+      "kind": "card",
+      "file": "de3f2a64-c07d",
+      "parent": "g03-workloads"
+    },
+    {
+      "slug": "cronjob",
+      "title": "CronJob",
+      "kind": "card",
+      "file": "3e4a0276-76b9",
+      "parent": "g03-workloads"
+    },
+    {
+      "slug": "controllerrevision-and-podtemplate",
+      "title": "ControllerRevision and PodTemplate",
+      "kind": "card",
+      "file": "1cd196d1-a7af",
+      "parent": "g03-workloads"
+    },
+    {
+      "slug": "replicationcontroller-legacy",
+      "title": "ReplicationController (legacy)",
+      "kind": "card",
+      "file": "5a74af73-b998",
+      "parent": "g03-workloads"
+    },
+    {
+      "slug": "g04-service-networking",
+      "title": "4 · Service networking",
+      "kind": "group",
+      "file": "b38b9f4b-b9f8"
+    },
+    {
+      "slug": "service",
+      "title": "Service",
+      "kind": "card",
+      "file": "5720a893-9633",
+      "parent": "g04-service-networking"
+    },
+    {
+      "slug": "endpointslice",
+      "title": "EndpointSlice",
+      "kind": "card",
+      "file": "b5ea3d10-76f8",
+      "parent": "g04-service-networking"
+    },
+    {
+      "slug": "endpoints-deprecated",
+      "title": "Endpoints (deprecated)",
+      "kind": "card",
+      "file": "6e5f79f5-2954",
+      "parent": "g04-service-networking"
+    },
+    {
+      "slug": "servicecidr-and-ipaddress",
+      "title": "ServiceCIDR and IPAddress",
+      "kind": "card",
+      "file": "459e4db9-1cdd",
+      "parent": "g04-service-networking"
+    },
+    {
+      "slug": "ingress-and-ingressclass",
+      "title": "Ingress and IngressClass",
+      "kind": "card",
+      "file": "70e87f6e-9eec",
+      "parent": "g04-service-networking"
+    },
+    {
+      "slug": "gateway-api",
+      "title": "Gateway API",
+      "kind": "card",
+      "file": "bd55fe46-5ae0",
+      "parent": "g04-service-networking"
+    },
+    {
+      "slug": "networkpolicy",
+      "title": "NetworkPolicy",
+      "kind": "card",
+      "file": "39955d76-aeb1",
+      "parent": "g04-service-networking"
+    },
+    {
+      "slug": "dns-for-services-and-pods",
+      "title": "DNS for Services and Pods",
+      "kind": "card",
+      "file": "1ed17abb-e864",
+      "parent": "g04-service-networking"
+    },
+    {
+      "slug": "g05-configuration",
+      "title": "5 · Configuration",
+      "kind": "group",
+      "file": "846265bf-3074"
+    },
+    {
+      "slug": "configmap",
+      "title": "ConfigMap",
+      "kind": "card",
+      "file": "0de18a96-e74f",
+      "parent": "g05-configuration"
+    },
+    {
+      "slug": "secret",
+      "title": "Secret",
+      "kind": "card",
+      "file": "2778eb94-d8ce",
+      "parent": "g05-configuration"
+    },
+    {
+      "slug": "downward-api-and-projected-volumes",
+      "title": "Downward API and projected volumes",
+      "kind": "card",
+      "file": "98968bfc-0802",
+      "parent": "g05-configuration"
+    },
+    {
+      "slug": "g06-storage",
+      "title": "6 · Storage",
+      "kind": "group",
+      "file": "191e08be-f2f6"
+    },
+    {
+      "slug": "volume-types",
+      "title": "Volume types",
+      "kind": "card",
+      "file": "e4add3c0-4a9f",
+      "parent": "g06-storage"
+    },
+    {
+      "slug": "persistentvolume",
+      "title": "PersistentVolume",
+      "kind": "card",
+      "file": "aafe72d1-128c",
+      "parent": "g06-storage"
+    },
+    {
+      "slug": "persistentvolumeclaim",
+      "title": "PersistentVolumeClaim",
+      "kind": "card",
+      "file": "84788051-abed",
+      "parent": "g06-storage"
+    },
+    {
+      "slug": "storageclass",
+      "title": "StorageClass",
+      "kind": "card",
+      "file": "e6818353-503e",
+      "parent": "g06-storage"
+    },
+    {
+      "slug": "volumeattributesclass",
+      "title": "VolumeAttributesClass",
+      "kind": "card",
+      "file": "fb2c9688-4be4",
+      "parent": "g06-storage"
+    },
+    {
+      "slug": "csidriver-csinode-and-csistoragecapacity",
+      "title": "CSIDriver, CSINode and CSIStorageCapacity",
+      "kind": "card",
+      "file": "9c68ed04-91ca",
+      "parent": "g06-storage"
+    },
+    {
+      "slug": "volumeattachment",
+      "title": "VolumeAttachment",
+      "kind": "card",
+      "file": "535ee02f-4868",
+      "parent": "g06-storage"
+    },
+    {
+      "slug": "volumesnapshot-add-on",
+      "title": "VolumeSnapshot (add-on)",
+      "kind": "card",
+      "file": "7362640b-16ee",
+      "parent": "g06-storage"
+    },
+    {
+      "slug": "g07-scheduling-and-capacity",
+      "title": "7 · Scheduling and capacity",
+      "kind": "group",
+      "file": "c0067041-5d3b"
+    },
+    {
+      "slug": "node",
+      "title": "Node",
+      "kind": "card",
+      "file": "31f3f34d-df1a",
+      "parent": "g07-scheduling-and-capacity"
+    },
+    {
+      "slug": "requests-limits-and-qos",
+      "title": "Requests, limits and QoS",
+      "kind": "card",
+      "file": "2fb873da-1447",
+      "parent": "g07-scheduling-and-capacity"
+    },
+    {
+      "slug": "resourcequota",
+      "title": "ResourceQuota",
+      "kind": "card",
+      "file": "ba2c14e0-2f24",
+      "parent": "g07-scheduling-and-capacity"
+    },
+    {
+      "slug": "limitrange",
+      "title": "LimitRange",
+      "kind": "card",
+      "file": "bf911b90-5164",
+      "parent": "g07-scheduling-and-capacity"
+    },
+    {
+      "slug": "priorityclass-and-preemption",
+      "title": "PriorityClass and preemption",
+      "kind": "card",
+      "file": "8a1e6b6d-b214",
+      "parent": "g07-scheduling-and-capacity"
+    },
+    {
+      "slug": "taints-tolerations-and-affinity",
+      "title": "Taints, tolerations and affinity",
+      "kind": "card",
+      "file": "853a7cdb-6aa6",
+      "parent": "g07-scheduling-and-capacity"
+    },
+    {
+      "slug": "topology-spread-constraints",
+      "title": "Topology spread constraints",
+      "kind": "card",
+      "file": "f5f5c515-9c4d",
+      "parent": "g07-scheduling-and-capacity"
+    },
+    {
+      "slug": "poddisruptionbudget",
+      "title": "PodDisruptionBudget",
+      "kind": "card",
+      "file": "2c5da97a-cdfb",
+      "parent": "g07-scheduling-and-capacity"
+    },
+    {
+      "slug": "runtimeclass",
+      "title": "RuntimeClass",
+      "kind": "card",
+      "file": "e0034894-7332",
+      "parent": "g07-scheduling-and-capacity"
+    },
+    {
+      "slug": "dynamic-resource-allocation",
+      "title": "Dynamic Resource Allocation",
+      "kind": "card",
+      "file": "ad9aba57-f61c",
+      "parent": "g07-scheduling-and-capacity"
+    },
+    {
+      "slug": "g08-autoscaling",
+      "title": "8 · Autoscaling",
+      "kind": "group",
+      "file": "fcc0cc7b-3bfe"
+    },
+    {
+      "slug": "horizontalpodautoscaler",
+      "title": "HorizontalPodAutoscaler",
+      "kind": "card",
+      "file": "7a3c97d0-74c9",
+      "parent": "g08-autoscaling"
+    },
+    {
+      "slug": "metrics-api-and-metrics-server",
+      "title": "Metrics API and metrics-server",
+      "kind": "card",
+      "file": "ad66c08b-c8ac",
+      "parent": "g08-autoscaling"
+    },
+    {
+      "slug": "verticalpodautoscaler-add-on",
+      "title": "VerticalPodAutoscaler (add-on)",
+      "kind": "card",
+      "file": "5512b5cd-a714",
+      "parent": "g08-autoscaling"
+    },
+    {
+      "slug": "cluster-autoscaler-and-karpenter-add-on",
+      "title": "Cluster Autoscaler and Karpenter (add-on)",
+      "kind": "card",
+      "file": "12d7621f-6128",
+      "parent": "g08-autoscaling"
+    },
+    {
+      "slug": "g09-security-and-access",
+      "title": "9 · Security and access",
+      "kind": "group",
+      "file": "b6706056-6d0a"
+    },
+    {
+      "slug": "authentication",
+      "title": "Authentication",
+      "kind": "card",
+      "file": "c0e3b2d6-db5a",
+      "parent": "g09-security-and-access"
+    },
+    {
+      "slug": "serviceaccount",
+      "title": "ServiceAccount",
+      "kind": "card",
+      "file": "59f96fe4-8a63",
+      "parent": "g09-security-and-access"
+    },
+    {
+      "slug": "rbac",
+      "title": "RBAC",
+      "kind": "card",
+      "file": "8b4620ae-3dc1",
+      "parent": "g09-security-and-access"
+    },
+    {
+      "slug": "access-reviews",
+      "title": "Access reviews",
+      "kind": "card",
+      "file": "309f4423-3edd",
+      "parent": "g09-security-and-access"
+    },
+    {
+      "slug": "securitycontext-and-capabilities",
+      "title": "SecurityContext and capabilities",
+      "kind": "card",
+      "file": "644fc1fa-23be",
+      "parent": "g09-security-and-access"
+    },
+    {
+      "slug": "pod-security-admission",
+      "title": "Pod Security Admission",
+      "kind": "card",
+      "file": "1dffd5ad-7de8",
+      "parent": "g09-security-and-access"
+    },
+    {
+      "slug": "admission-webhooks",
+      "title": "Admission webhooks",
+      "kind": "card",
+      "file": "2b7d949c-17ba",
+      "parent": "g09-security-and-access"
+    },
+    {
+      "slug": "validatingadmissionpolicy",
+      "title": "ValidatingAdmissionPolicy",
+      "kind": "card",
+      "file": "a3572e03-15a7",
+      "parent": "g09-security-and-access"
+    },
+    {
+      "slug": "mutatingadmissionpolicy",
+      "title": "MutatingAdmissionPolicy",
+      "kind": "card",
+      "file": "47f623ab-67df",
+      "parent": "g09-security-and-access"
+    },
+    {
+      "slug": "certificates-and-trust-bundles",
+      "title": "Certificates and trust bundles",
+      "kind": "card",
+      "file": "5b5ab172-c02f",
+      "parent": "g09-security-and-access"
+    },
+    {
+      "slug": "audit-logging",
+      "title": "Audit logging",
+      "kind": "card",
+      "file": "8d01cc26-1dc7",
+      "parent": "g09-security-and-access"
+    },
+    {
+      "slug": "encrypting-secrets-at-rest",
+      "title": "Encrypting Secrets at rest",
+      "kind": "card",
+      "file": "d188dcad-9044",
+      "parent": "g09-security-and-access"
+    },
+    {
+      "slug": "g10-extending-kubernetes",
+      "title": "10 · Extending Kubernetes",
+      "kind": "group",
+      "file": "8c9f80b6-f263"
+    },
+    {
+      "slug": "customresourcedefinition",
+      "title": "CustomResourceDefinition",
+      "kind": "card",
+      "file": "aadaf21e-a040",
+      "parent": "g10-extending-kubernetes"
+    },
+    {
+      "slug": "apiservice-and-aggregation",
+      "title": "APIService and aggregation",
+      "kind": "card",
+      "file": "cee179cb-dc0b",
+      "parent": "g10-extending-kubernetes"
+    },
+    {
+      "slug": "operators-and-custom-controllers",
+      "title": "Operators and custom controllers",
+      "kind": "card",
+      "file": "ba41eac5-bed3",
+      "parent": "g10-extending-kubernetes"
+    },
+    {
+      "slug": "g11-operations",
+      "title": "11 · Operations",
+      "kind": "group",
+      "file": "6586ec6d-f3b7"
+    },
+    {
+      "slug": "kubeconfig-and-contexts",
+      "title": "kubeconfig and contexts",
+      "kind": "card",
+      "file": "911d2a59-5c77",
+      "parent": "g11-operations"
+    },
+    {
+      "slug": "upgrades-and-version-skew",
+      "title": "Upgrades and version skew",
+      "kind": "card",
+      "file": "a29eb23f-016d",
+      "parent": "g11-operations"
+    },
+    {
+      "slug": "etcd-backup-and-restore",
+      "title": "etcd backup and restore",
+      "kind": "card",
+      "file": "7c8faca0-0f95",
+      "parent": "g11-operations"
+    },
+    {
+      "slug": "node-maintenance-and-eviction",
+      "title": "Node maintenance and eviction",
+      "kind": "card",
+      "file": "37dbdf98-64b8",
+      "parent": "g11-operations"
+    },
+    {
+      "slug": "logs-events-and-kubectl-debug",
+      "title": "Logs, events and kubectl debug",
+      "kind": "card",
+      "file": "0862896f-2fce",
+      "parent": "g11-operations"
+    },
+    {
+      "slug": "storageversionmigration",
+      "title": "StorageVersionMigration",
+      "kind": "card",
+      "file": "495905b7-742e",
+      "parent": "g11-operations"
+    },
+    {
+      "slug": "troubleshooting-playbook",
+      "title": "Troubleshooting playbook",
+      "kind": "card",
+      "file": "9e77d2f6-cf90",
+      "parent": "g11-operations"
+    },
+    {
+      "slug": "helm-and-kustomize",
+      "title": "Helm and Kustomize",
+      "kind": "card",
+      "file": "6f3b3f59-fe33",
+      "parent": "g11-operations"
+    },
+    {
+      "slug": "g12-exam-drills",
+      "title": "12 · Exam drills",
+      "kind": "group",
+      "file": "8e6fe112-f4fc"
+    },
+    {
+      "slug": "cka-drills",
+      "title": "CKA drills",
+      "kind": "card",
+      "file": "3a0f300b-f23e",
+      "parent": "g12-exam-drills"
+    },
+    {
+      "slug": "ckad-drills",
+      "title": "CKAD drills",
+      "kind": "card",
+      "file": "718a15c5-aeb1",
+      "parent": "g12-exam-drills"
+    },
+    {
+      "slug": "kcna-review",
+      "title": "KCNA review",
+      "kind": "card",
+      "file": "5a8ef98e-6ae4",
+      "parent": "g12-exam-drills"
+    }
+  ]
+}

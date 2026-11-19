@@ -8,14 +8,15 @@ A free, hands-on book from your first shell command to running Kubernetes at the
 | --- | --- | --- |
 | 0 | Orientation and Lab Setup | Published |
 | 1 | Linux and the Operating System | Published |
-| 2 | Networking | Coming |
-| 3 | Distributed Systems | Coming |
-| 4 | Containers | Coming |
-| 5 | Kubernetes Core | Coming |
-| 6 | Kubernetes Networking and Security | Coming |
-| 7 | Platform and Capstone | Coming |
+| 2 | Networking | Published |
+| 3 | Distributed Systems | Published |
+| 4 | Containers | Published |
+| 5 | Kubernetes Core | Published |
+| 6 | Kubernetes Networking and Security | Published (Milestone 6 is being re-verified) |
+| 7 | Platform and Capstone | Published |
+| | Kubernetes Field Guide | Published: 89 cards, one per built-in resource, component and mechanism, plus CKA, CKAD and KCNA drills |
 
-A volume is published once its labs pass a clean run.
+A page is published once its lab passes a clean run.
 
 ## What is in this repo
 
@@ -27,6 +28,9 @@ book/
     volume.json        the volume's pages, in reading order
     <page>.md          one page per file (overview, ch-N-M, lab-N-M, review-N-M, milestone-N, glossary)
     diagrams/*.jsx     each diagram as a small JSX module that returns an SVG
+    images/            real UI screenshots (Vol 6, Vol 7)
+  field-guide/         the Kubernetes Field Guide, same layout
+data/                  the measured data behind the charts
 code/
   wallet/              the running case study: API + Postgres + worker
 build/                 turns book/ into static HTML pages
@@ -56,5 +60,5 @@ Found a mistake? [Open an issue](https://github.com/benebobaa/cloud-native-from-
 
 ## License
 
-- Text and diagrams (`book/`): [CC BY-SA 4.0](LICENSE)
+- Text, diagrams and data (`book/`, `data/`): [CC BY-SA 4.0](LICENSE)
 - Code (`code/`, `build/`, `site/`): [MIT](LICENSE-CODE)

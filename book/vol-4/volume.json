@@ -1,0 +1,86 @@
+{
+  "number": 4,
+  "slug": "vol-4",
+  "title": "Containers",
+  "doc": "5P9Beib1Z1rBE7StjkcNQt",
+  "tabs": [
+    {
+      "slug": "overview",
+      "title": "Overview",
+      "kind": "overview",
+      "file": "f0f8e897-16e7"
+    },
+    {
+      "slug": "ch-4-1",
+      "title": "Ch 4.1 · Images and OCI",
+      "kind": "chapter",
+      "file": "a6a012ce-2b34"
+    },
+    {
+      "slug": "lab-4-1",
+      "title": "Lab 4.1",
+      "kind": "lab",
+      "file": "3ad4e08a-dbd1",
+      "parent": "ch-4-1"
+    },
+    {
+      "slug": "review-4-1",
+      "title": "Review 4.1",
+      "kind": "review",
+      "file": "69259028-0b1e",
+      "parent": "ch-4-1"
+    },
+    {
+      "slug": "ch-4-2",
+      "title": "Ch 4.2 · Runtimes and CRI",
+      "kind": "chapter",
+      "file": "ab9e5816-b5ea"
+    },
+    {
+      "slug": "lab-4-2",
+      "title": "Lab 4.2",
+      "kind": "lab",
+      "file": "5f980210-5387",
+      "parent": "ch-4-2"
+    },
+    {
+      "slug": "review-4-2",
+      "title": "Review 4.2",
+      "kind": "review",
+      "file": "9b27d551-b056",
+      "parent": "ch-4-2"
+    },
+    {
+      "slug": "ch-4-3",
+      "title": "Ch 4.3 · Multi-Container Apps",
+      "kind": "chapter",
+      "file": "43717856-5378"
+    },
+    {
+      "slug": "lab-4-3",
+      "title": "Lab 4.3",
+      "kind": "lab",
+      "file": "2ec08dd7-23bc",
+      "parent": "ch-4-3"
+    },
+    {
+      "slug": "review-4-3",
+      "title": "Review 4.3",
+      "kind": "review",
+      "file": "767e6a0e-6751",
+      "parent": "ch-4-3"
+    },
+    {
+      "slug": "milestone-4",
+      "title": "Milestone 4",
+      "kind": "milestone",
+      "file": "a41cd050-a37b"
+    },
+    {
+      "slug": "glossary",
+      "title": "Glossary and References",
+      "kind": "glossary",
+      "file": "7564878b-9146"
+    }
+  ]
+}

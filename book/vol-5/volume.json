@@ -1,0 +1,126 @@
+{
+  "number": 5,
+  "slug": "vol-5",
+  "title": "Kubernetes Core",
+  "doc": "AMvWTj9nGBnT6FGuvgfQrN",
+  "tabs": [
+    {
+      "slug": "overview",
+      "title": "Overview",
+      "kind": "overview",
+      "file": "f6808e82-c8b9"
+    },
+    {
+      "slug": "ch-5-1",
+      "title": "Ch 5.1 · Architecture and API",
+      "kind": "chapter",
+      "file": "3b86803a-6757"
+    },
+    {
+      "slug": "lab-5-1",
+      "title": "Lab 5.1",
+      "kind": "lab",
+      "file": "6fcf2273-d7cd",
+      "parent": "ch-5-1"
+    },
+    {
+      "slug": "review-5-1",
+      "title": "Review 5.1",
+      "kind": "review",
+      "file": "c21d1435-dd81",
+      "parent": "ch-5-1"
+    },
+    {
+      "slug": "ch-5-2",
+      "title": "Ch 5.2 · Workloads",
+      "kind": "chapter",
+      "file": "eaa6b104-a413"
+    },
+    {
+      "slug": "lab-5-2",
+      "title": "Lab 5.2",
+      "kind": "lab",
+      "file": "ad19c762-ce46",
+      "parent": "ch-5-2"
+    },
+    {
+      "slug": "review-5-2",
+      "title": "Review 5.2",
+      "kind": "review",
+      "file": "5c1253dc-cdef",
+      "parent": "ch-5-2"
+    },
+    {
+      "slug": "ch-5-3",
+      "title": "Ch 5.3 · Services and Config",
+      "kind": "chapter",
+      "file": "cf9e9177-3557"
+    },
+    {
+      "slug": "lab-5-3",
+      "title": "Lab 5.3",
+      "kind": "lab",
+      "file": "10bfc0c5-7cf0",
+      "parent": "ch-5-3"
+    },
+    {
+      "slug": "review-5-3",
+      "title": "Review 5.3",
+      "kind": "review",
+      "file": "24deb52b-5f0d",
+      "parent": "ch-5-3"
+    },
+    {
+      "slug": "ch-5-4",
+      "title": "Ch 5.4 · Storage and Scheduling",
+      "kind": "chapter",
+      "file": "5baa35cb-6f8e"
+    },
+    {
+      "slug": "lab-5-4",
+      "title": "Lab 5.4",
+      "kind": "lab",
+      "file": "8d30984d-4f21",
+      "parent": "ch-5-4"
+    },
+    {
+      "slug": "review-5-4",
+      "title": "Review 5.4",
+      "kind": "review",
+      "file": "aa822585-ed5e",
+      "parent": "ch-5-4"
+    },
+    {
+      "slug": "ch-5-5",
+      "title": "Ch 5.5 · Cluster Operations",
+      "kind": "chapter",
+      "file": "33e91fd8-8eef"
+    },
+    {
+      "slug": "lab-5-5",
+      "title": "Lab 5.5",
+      "kind": "lab",
+      "file": "b19d5054-553f",
+      "parent": "ch-5-5"
+    },
+    {
+      "slug": "review-5-5",
+      "title": "Review 5.5",
+      "kind": "review",
+      "file": "85ab486e-4249",
+      "parent": "ch-5-5"
+    },
+    {
+      "slug": "milestone-5",
+      "title": "Milestone 5",
+      "kind": "milestone",
+      "file": "083a2a15-5fbc"
+    },
+    {
+      "slug": "glossary",
+      "title": "Glossary and References",
+      "kind": "glossary",
+      "file": "182f7c5b-91ab"
+    }
+  ]
+}

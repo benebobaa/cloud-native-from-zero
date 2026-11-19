@@ -1,0 +1,126 @@
+{
+  "number": 2,
+  "slug": "vol-2",
+  "title": "Networking",
+  "doc": "XVTjQ5uQvJNLyx9AB7oZQY",
+  "tabs": [
+    {
+      "slug": "overview",
+      "title": "Overview",
+      "kind": "overview",
+      "file": "276d3097-970b"
+    },
+    {
+      "slug": "ch-2-1",
+      "title": "Ch 2.1 · Ethernet and ARP",
+      "kind": "chapter",
+      "file": "243ccbd3-0a3d"
+    },
+    {
+      "slug": "lab-2-1",
+      "title": "Lab 2.1",
+      "kind": "lab",
+      "file": "88770949-b7ed",
+      "parent": "ch-2-1"
+    },
+    {
+      "slug": "review-2-1",
+      "title": "Review 2.1",
+      "kind": "review",
+      "file": "5c9ffd79-6cd7",
+      "parent": "ch-2-1"
+    },
+    {
+      "slug": "ch-2-2",
+      "title": "Ch 2.2 · IP and Routing",
+      "kind": "chapter",
+      "file": "0f861d2e-fda1"
+    },
+    {
+      "slug": "lab-2-2",
+      "title": "Lab 2.2",
+      "kind": "lab",
+      "file": "0e2a455d-1c68",
+      "parent": "ch-2-2"
+    },
+    {
+      "slug": "review-2-2",
+      "title": "Review 2.2",
+      "kind": "review",
+      "file": "fff502cf-123a",
+      "parent": "ch-2-2"
+    },
+    {
+      "slug": "ch-2-3",
+      "title": "Ch 2.3 · TCP and UDP",
+      "kind": "chapter",
+      "file": "0371ae32-468f"
+    },
+    {
+      "slug": "lab-2-3",
+      "title": "Lab 2.3",
+      "kind": "lab",
+      "file": "517870cb-954b",
+      "parent": "ch-2-3"
+    },
+    {
+      "slug": "review-2-3",
+      "title": "Review 2.3",
+      "kind": "review",
+      "file": "7ba2139c-bd6c",
+      "parent": "ch-2-3"
+    },
+    {
+      "slug": "ch-2-4",
+      "title": "Ch 2.4 · DNS, HTTP, TLS",
+      "kind": "chapter",
+      "file": "9099fe57-ac5b"
+    },
+    {
+      "slug": "lab-2-4",
+      "title": "Lab 2.4",
+      "kind": "lab",
+      "file": "204d5302-8451",
+      "parent": "ch-2-4"
+    },
+    {
+      "slug": "review-2-4",
+      "title": "Review 2.4",
+      "kind": "review",
+      "file": "d9261032-6d91",
+      "parent": "ch-2-4"
+    },
+    {
+      "slug": "ch-2-5",
+      "title": "Ch 2.5 · Linux Networking",
+      "kind": "chapter",
+      "file": "c2876d53-8f51"
+    },
+    {
+      "slug": "lab-2-5",
+      "title": "Lab 2.5",
+      "kind": "lab",
+      "file": "555c717e-f7c8",
+      "parent": "ch-2-5"
+    },
+    {
+      "slug": "review-2-5",
+      "title": "Review 2.5",
+      "kind": "review",
+      "file": "db6636f3-1b57",
+      "parent": "ch-2-5"
+    },
+    {
+      "slug": "milestone-2",
+      "title": "Milestone 2",
+      "kind": "milestone",
+      "file": "d34e9f94-3f7d"
+    },
+    {
+      "slug": "glossary",
+      "title": "Glossary and References",
+      "kind": "glossary",
+      "file": "8722bc1c-b3fd"
+    }
+  ]
+}

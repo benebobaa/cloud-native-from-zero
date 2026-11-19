@@ -1,0 +1,14 @@
+1616,ReplicaSet,web3-596949f9dc,ADDED,replicas=0 ready=0
+1628,Pod,web3-596949f9dc-52ncf,ADDED,Pending-unscheduled
+1637,Pod,web3-596949f9dc-52ncf,MODIFIED,ContainerCreating
+1640,Pod,web3-596949f9dc-xqqz6,ADDED,Pending-unscheduled
+1640,Pod,web3-596949f9dc-rsf6t,ADDED,Pending-unscheduled
+1652,Pod,web3-596949f9dc-xqqz6,MODIFIED,ContainerCreating
+1652,Pod,web3-596949f9dc-rsf6t,MODIFIED,ContainerCreating
+1672,ReplicaSet,web3-596949f9dc,MODIFIED,replicas=3 ready=0
+2401,Pod,web3-596949f9dc-xqqz6,MODIFIED,Ready
+2418,ReplicaSet,web3-596949f9dc,MODIFIED,replicas=3 ready=1
+2504,Pod,web3-596949f9dc-52ncf,MODIFIED,Ready
+2514,ReplicaSet,web3-596949f9dc,MODIFIED,replicas=3 ready=2
+2530,Pod,web3-596949f9dc-rsf6t,MODIFIED,Ready
+2543,ReplicaSet,web3-596949f9dc,MODIFIED,replicas=3 ready=3

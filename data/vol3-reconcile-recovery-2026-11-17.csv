@@ -1,0 +1,31 @@
+label,trial,recovery_ms
+poll 10 s,1,7821
+poll 10 s,2,6163
+poll 10 s,3,16311
+poll 10 s,4,8589
+poll 10 s,5,9450
+poll 10 s,6,12858
+poll 10 s,7,7299
+poll 10 s,8,9633
+poll 10 s,9,8964
+poll 10 s,10,17785
+poll 2 s,1,7022
+poll 2 s,2,5779
+poll 2 s,3,5936
+poll 2 s,4,4009
+poll 2 s,5,4989
+poll 2 s,6,4776
+poll 2 s,7,3957
+poll 2 s,8,4690
+poll 2 s,9,2299
+poll 2 s,10,5547
+events + poll 10 s,1,1783
+events + poll 10 s,2,2695
+events + poll 10 s,3,2481
+events + poll 10 s,4,2834
+events + poll 10 s,5,1800
+events + poll 10 s,6,1963
+events + poll 10 s,7,1973
+events + poll 10 s,8,6666
+events + poll 10 s,9,6313
+events + poll 10 s,10,5263
