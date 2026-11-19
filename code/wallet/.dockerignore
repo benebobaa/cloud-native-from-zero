@@ -1,0 +1,4 @@
+# Send only what the Dockerfiles COPY.
+*
+!app/
+**/__pycache__

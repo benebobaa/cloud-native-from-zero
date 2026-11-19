@@ -1,0 +1,15 @@
+{
+  "number": 0,
+  "slug": "vol-0",
+  "title": "Orientation and Lab Setup",
+  "doc": "PfCPcVMiAAH2HqULgnRB4R",
+  "tabs": [
+    {"slug": "overview",       "title": "Overview",                 "kind": "overview",  "file": "93b689a6-30f9"},
+    {"slug": "ch-0-1",         "title": "Ch 0.1 · The Journey",     "kind": "chapter",   "file": "10e6c0ef-c28b"},
+    {"slug": "lab-0-1",        "title": "Lab 0.1",                  "kind": "lab",       "file": "9ae3e5bd-1039", "parent": "ch-0-1"},
+    {"slug": "review-0-1",     "title": "Review 0.1",               "kind": "review",    "file": "b3687835-0191", "parent": "ch-0-1"},
+    {"slug": "landscape-map",  "title": "CNCF Landscape Map",       "kind": "extra",     "file": "8b2069fb-6bd0"},
+    {"slug": "syllabus",       "title": "Syllabus",                 "kind": "extra",     "file": "a5e7aecf-8aed"},
+    {"slug": "glossary",       "title": "Glossary and References",  "kind": "glossary",  "file": "838aa80f-706f"}
+  ]
+}

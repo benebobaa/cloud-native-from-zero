@@ -1,0 +1,74 @@
+# Wallet stack with health checks, resource limits and least privilege (Ch 4.3).
+#   cp .env.example .env && docker compose -f compose.stack.yaml up -d --build
+name: wallet-stack
+
+x-wallet: &wallet
+  image: wallet:alpine
+  restart: unless-stopped
+  stop_grace_period: 10s
+  read_only: true
+  tmpfs: [/tmp]
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  networks: [backend]
+  environment:
+    DATABASE_URL: postgresql://wallet:${DB_PASSWORD:?set DB_PASSWORD in .env}@postgres:5432/wallet
+  depends_on:
+    postgres: {condition: service_healthy}
+  logging:
+    driver: json-file
+    options: {max-size: 10m, max-file: "3"}
+
+services:
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: wallet
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD in .env}
+      POSTGRES_DB: wallet
+    volumes: [pgdata:/var/lib/postgresql/data]
+    networks: [backend]
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "wallet", "-d", "wallet"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    deploy:
+      resources:
+        limits: {memory: 256M, cpus: "1.0"}
+
+  api:
+    <<: *wallet
+    build: {context: ., dockerfile: Dockerfile.alpine}
+    ports: ["127.0.0.1:${API_PORT:-8080}:8080"]
+    networks: [backend, frontend]
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request as u; u.urlopen('http://127.0.0.1:8080/readyz', timeout=4)"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    deploy:
+      resources:
+        limits: {memory: 128M, cpus: "0.5"}
+
+  worker:
+    <<: *wallet
+    command: ["python3", "worker.py"]
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import db; db.connect().execute('SELECT 1')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    deploy:
+      resources:
+        limits: {memory: 128M, cpus: "0.5"}
+
+volumes:
+  pgdata:
+
+networks:
+  backend: {internal: true}   # no route to the internet
+  frontend: {}                # only the api joins it, to publish its port

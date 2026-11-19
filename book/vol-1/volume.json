@@ -1,0 +1,26 @@
+{
+  "number": 1,
+  "slug": "vol-1",
+  "title": "Linux and the Operating System",
+  "doc": "Skkm72qFTvjwWE9kUPWt9w",
+  "tabs": [
+    {"slug": "overview",   "title": "Overview",                          "kind": "overview",  "file": "2483827b-cd41"},
+    {"slug": "ch-1-1",     "title": "Ch 1.1 · Shell, Files, Permissions", "kind": "chapter",  "file": "33f75265-4d53"},
+    {"slug": "lab-1-1",    "title": "Lab 1.1",    "kind": "lab",    "file": "0dfb6c56-024c", "parent": "ch-1-1"},
+    {"slug": "review-1-1", "title": "Review 1.1", "kind": "review", "file": "d80bee86-0fe2", "parent": "ch-1-1"},
+    {"slug": "ch-1-2",     "title": "Ch 1.2 · Processes and Memory",     "kind": "chapter",  "file": "89acea22-d50e"},
+    {"slug": "lab-1-2",    "title": "Lab 1.2",    "kind": "lab",    "file": "69d3aab0-e663", "parent": "ch-1-2"},
+    {"slug": "review-1-2", "title": "Review 1.2", "kind": "review", "file": "237232ae-2cb7", "parent": "ch-1-2"},
+    {"slug": "ch-1-3",     "title": "Ch 1.3 · Filesystems and systemd",  "kind": "chapter",  "file": "a2cc27c0-8e8c"},
+    {"slug": "lab-1-3",    "title": "Lab 1.3",    "kind": "lab",    "file": "1b54a013-c494", "parent": "ch-1-3"},
+    {"slug": "review-1-3", "title": "Review 1.3", "kind": "review", "file": "c375d662-8eea", "parent": "ch-1-3"},
+    {"slug": "ch-1-4",     "title": "Ch 1.4 · Operator's Toolkit",       "kind": "chapter",  "file": "6a135439-600f"},
+    {"slug": "lab-1-4",    "title": "Lab 1.4",    "kind": "lab",    "file": "e89b146b-1090", "parent": "ch-1-4"},
+    {"slug": "review-1-4", "title": "Review 1.4", "kind": "review", "file": "6b4766db-0401", "parent": "ch-1-4"},
+    {"slug": "ch-1-5",     "title": "Ch 1.5 · Namespaces and cgroups",   "kind": "chapter",  "file": "76bd7c62-871e"},
+    {"slug": "lab-1-5",    "title": "Lab 1.5",    "kind": "lab",    "file": "4e0c0e6a-0702", "parent": "ch-1-5"},
+    {"slug": "review-1-5", "title": "Review 1.5", "kind": "review", "file": "5124a9f1-ec51", "parent": "ch-1-5"},
+    {"slug": "milestone-1","title": "Milestone 1","kind": "milestone","file": "bbcbf9a4-5f53"},
+    {"slug": "glossary",   "title": "Glossary and References", "kind": "glossary", "file": "c98ffcc4-88c8"}
+  ]
+}

@@ -1,0 +1,431 @@
+/* ==========================================================================
+   Cloud Native from Zero — book components
+   Based on the MikroTik course stylesheet (personal-page/mikrotik-network/assets/style.css);
+   book additions are at the end of the file.
+
+   These pages load the site's styles.css FIRST (tokens, type, nav, footer),
+   then this file. Everything here stays in the site's black & white language:
+   hairlines, whitespace and mono labels do the work. No colour, no motion.
+
+   Do not add a :root block or base element colours here — those live in
+   styles.css. This file only styles the course-specific pieces.
+   ========================================================================== */
+
+.page {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding: 3.25rem var(--gutter) 5rem;
+}
+
+/* Same reading measure as the site: the column is 60rem, the prose hugs --text. */
+.page p,
+.page ul,
+.page ol,
+.page pre,
+.page table,
+.page .kv,
+.page .callout,
+.page .quiz,
+.page .next,
+.page .portmap,
+.page figure.diagram,
+.page h2 {
+  max-width: var(--text);
+}
+
+/* --- Headings & text ---------------------------------------------------- */
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin: 0 0 0.75rem;
+}
+.kicker a {
+  color: var(--fg-muted);
+  text-decoration: none;
+}
+.kicker a:hover {
+  color: var(--fg-strong);
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: var(--step-4);
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--fg-strong);
+  margin: 0 0 0.875rem;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: var(--step-2);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--fg-strong);
+  margin: 2.75rem 0 0.875rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+  font-size: var(--step-0);
+  font-weight: 600;
+  color: var(--fg-strong);
+  margin: 1.75rem 0 0.4rem;
+}
+
+p { margin: 0.75rem 0; }
+
+ul, ol { margin: 0.75rem 0; padding-left: 1.3rem; }
+li { margin: 0.35rem 0; }
+li > ul, li > ol { margin: 0.25rem 0; }
+
+strong { font-weight: 600; color: var(--fg-strong); }
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--fg-muted);
+}
+
+/* --- Code --------------------------------------------------------------- */
+
+code, pre, kbd {
+  font-family: var(--font-mono);
+  font-size: 0.84em;
+}
+
+code {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  padding: 0.05em 0.35em;
+  border-radius: 4px;
+}
+
+pre {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  line-height: 1.55;
+}
+pre code { background: none; border: 0; padding: 0; }
+
+kbd {
+  border: 1px solid var(--rule);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0.05em 0.4em;
+  background: var(--bg);
+}
+
+/* --- Tables ------------------------------------------------------------- */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: var(--step--1);
+}
+th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  border-bottom: 1.5px solid var(--fg-strong);
+  padding: 0.5rem 0.7rem 0.5rem 0;
+  font-weight: 500;
+}
+td {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.6rem 0.7rem 0.6rem 0;
+  vertical-align: top;
+}
+th:last-child, td:last-child { padding-right: 0; }
+
+/* --- Callouts ----------------------------------------------------------- */
+/* Monochrome on purpose: the title carries the meaning, not a colour. */
+
+.callout {
+  margin: 1.25rem 0;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--fg-muted);
+  border-radius: 0 8px 8px 0;
+  background: var(--surface);
+}
+.callout > :first-child { margin-top: 0; }
+.callout > :last-child { margin-bottom: 0; }
+
+.callout .callout-title {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-strong);
+  margin: 0 0 0.4rem;
+}
+
+/* Warn gets the strongest bar, task a dashed one. Still no colour. */
+.callout.warn { border-left-color: var(--fg-strong); }
+.callout.task { border-left-style: dashed; border-left-color: var(--fg-strong); }
+.callout.win  { border-left-color: var(--fg-strong); }
+
+/* --- Checklists --------------------------------------------------------- */
+
+ul.checklist { list-style: none; padding-left: 0; }
+ul.checklist li {
+  position: relative;
+  padding-left: 1.55rem;
+  margin: 0.45rem 0;
+}
+/* Out of flow so inline <code> in the same line doesn't become a second column. */
+ul.checklist input[type="checkbox"] {
+  position: absolute;
+  left: 0;
+  top: 0.32em;
+  width: 0.95em;
+  height: 0.95em;
+  margin: 0;
+  accent-color: var(--fg-strong);
+}
+
+/* --- Quiz (see assets/quiz.js) ------------------------------------------ */
+
+.quiz {
+  margin: 1.4rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--bg);
+}
+.quiz .quiz-q { font-weight: 600; margin: 0 0 0.75rem; }
+.quiz .quiz-opts { display: grid; gap: 0.45rem; margin: 0; }
+
+.quiz .quiz-opt {
+  font: inherit;
+  text-align: left;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--bg);
+  color: inherit;
+  cursor: pointer;
+}
+.quiz .quiz-opt:hover:not(:disabled) { border-color: var(--fg-strong); }
+.quiz .quiz-opt:disabled { cursor: default; color: var(--fg-muted); }
+
+/* Feedback without colour: the right answer fills black, a wrong one greys out. */
+.quiz .quiz-opt.is-correct {
+  border-color: var(--fg-strong);
+  background: var(--fg-strong);
+  color: var(--bg);
+  font-weight: 600;
+}
+.quiz .quiz-opt.is-wrong {
+  border-color: var(--rule);
+  color: var(--fg-muted);
+  text-decoration: line-through;
+}
+
+.quiz .quiz-status {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin: 0.75rem 0 0;
+  color: var(--fg-muted);
+}
+.quiz .quiz-status.ok { color: var(--fg-strong); }
+
+.quiz .quiz-why {
+  font-size: var(--step--1);
+  color: var(--fg);
+  margin: 0.6rem 0 0;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--rule);
+}
+
+.quiz .quiz-reset {
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  margin-top: 0.6rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--fg-muted);
+  cursor: pointer;
+}
+.quiz .quiz-reset:hover { border-color: var(--fg-strong); color: var(--fg-strong); }
+
+/* --- Reference: hEX port map -------------------------------------------- */
+
+.portmap { display: flex; gap: 0.5rem; margin: 1rem 0 0.4rem; flex-wrap: wrap; }
+.port {
+  flex: 1 1 0;
+  min-width: 4.2rem;
+  text-align: center;
+  border: 1.5px solid var(--fg-strong);
+  border-radius: 6px 6px 3px 3px;
+  padding: 0.55rem 0.3rem 0.5rem;
+  background: var(--bg);
+}
+.port .pn {
+  display: block;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 1rem;
+}
+.port .plabel {
+  display: block;
+  margin-top: 0.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.port.wan { background: var(--fg-strong); border-color: var(--fg-strong); }
+.port.wan .pn { color: var(--bg); }
+.port.wan .plabel { color: var(--bg); }
+
+/* --- Footer blocks ------------------------------------------------------ */
+
+.lesson-footer {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-size: var(--step--1);
+}
+.lesson-footer .nav { margin: 0.4rem 0; }
+.lesson-footer .meta { margin-top: 0.5rem; }
+
+.next {
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px dashed var(--rule);
+  border-radius: 8px;
+  background: var(--surface);
+}
+.next .next-title {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin: 0 0 0.35rem;
+}
+
+/* --- Diagrams ----------------------------------------------------------- */
+
+figure.diagram { margin: 1.4rem 0 1.2rem; }
+figure.diagram figcaption {
+  font-size: var(--step--1);
+  color: var(--fg-muted);
+  margin-top: 0.6rem;
+}
+
+.bridge-bar {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px dashed var(--fg-muted);
+  border-radius: 6px;
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--fg);
+  text-align: center;
+}
+
+/* Definition pairs: term on the left, value on the right. */
+.kv {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1rem;
+  margin: 1rem 0;
+  font-size: var(--step--1);
+}
+.kv dt {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  padding-top: 0.18rem;
+}
+.kv dd { margin: 0; }
+
+/* --- Print -------------------------------------------------------------- */
+
+@media print {
+  .page { max-width: none; padding: 0; }
+  .callout, .quiz, .port, .next { break-inside: avoid; }
+  h2 { break-after: avoid; }
+}
+
+
+/* ==========================================================================
+   Book additions
+   ========================================================================== */
+
+.page .book-body > *:not(figure):not(.table-wrap),
+.page .chapter-tabs,
+.page .pager { max-width: var(--text); }
+
+/* Wide things (diagrams, tables) may use the full 60rem column. */
+.page figure.diagram,
+.page .table-wrap,
+.page .table-wrap table { max-width: var(--measure); }
+
+figure.diagram svg { display: block; width: 100%; height: auto; }
+
+.table-wrap { overflow-x: auto; margin: 1rem 0; }
+.table-wrap table { margin: 0; }
+
+.book-body h4 { font-size: var(--step--1); font-weight: 600; margin: 1.25rem 0 0.3rem; color: var(--fg-strong); }
+.book-body blockquote { margin: 1rem 0; padding: 0.1rem 0 0.1rem 1rem; border-left: 2px solid var(--fg-strong); }
+.book-body hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+.book-body img { max-width: 100%; height: auto; border: 1px solid var(--rule); }
+.book-body h2[id], .book-body h3[id] { scroll-margin-top: 1rem; }
+
+/* Theory · Lab · Review switcher under the page title */
+.chapter-tabs {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.chapter-tabs a { color: var(--fg-muted); text-decoration: none; }
+.chapter-tabs a:hover { color: var(--fg-strong); text-decoration: underline; }
+.chapter-tabs [aria-current="page"] { color: var(--fg-strong); font-weight: 500; }
+
+/* Previous / next */
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 3rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: var(--step--1);
+}
+.pager a[rel="next"], .pager a:last-child { text-align: right; }

@@ -1,0 +1,9 @@
+# Same app on Alpine (musl libc): smaller base, wheels come from the musllinux builds.
+FROM python:3.12-alpine
+RUN pip install --no-cache-dir "psycopg[binary]==3.2.3"
+RUN adduser -D -H -u 10001 wallet
+WORKDIR /app
+COPY app/ /app/
+USER 10001
+EXPOSE 8080
+CMD ["python3", "api.py"]

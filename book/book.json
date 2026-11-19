@@ -1,0 +1,18 @@
+{
+  "title": "Cloud Native from Zero",
+  "description": "A free, hands-on book that takes you from the Linux shell to running Kubernetes like a CKA/CKAD-level operator, all on your own laptop.",
+  "volumes": [
+    {"number": 0, "slug": "vol-0", "doc": "PfCPcVMiAAH2HqULgnRB4R", "published": true,  "title": "Orientation and Lab Setup", "summary": "What cloud native is, the map of the CNCF landscape, and a working lab on your laptop."},
+    {"number": 1, "slug": "vol-1", "doc": "Skkm72qFTvjwWE9kUPWt9w", "published": true,  "title": "Linux and the Operating System", "summary": "Shell, files, processes, memory, systemd, and the namespaces and cgroups that containers are made of."},
+    {"number": 2, "slug": "vol-2", "doc": "XVTjQ5uQvJNLyx9AB7oZQY", "published": false, "title": "Networking", "summary": "Ethernet, IP, TCP, DNS, HTTP and TLS, then the Linux networking that Kubernetes builds on."},
+    {"number": 3, "slug": "vol-3", "doc": "6LUYVHiMoeAz7Lrj3eYao8", "published": false, "title": "Distributed Systems", "summary": "Failure and CAP, Raft and etcd, and the control loops at the heart of Kubernetes."},
+    {"number": 4, "slug": "vol-4", "doc": "5P9Beib1Z1rBE7StjkcNQt", "published": false, "title": "Containers", "summary": "Images and OCI, runtimes and the CRI, and multi-container apps."},
+    {"number": 5, "slug": "vol-5", "doc": "AMvWTj9nGBnT6FGuvgfQrN", "published": false, "title": "Kubernetes Core", "summary": "Architecture, workloads, services, storage, scheduling and cluster operations."},
+    {"number": 6, "slug": "vol-6", "doc": "2Fif8HAYB7QKpn1SRavBmk", "published": false, "title": "Kubernetes Networking and Security", "summary": "CNI and Cilium, Gateway API and service mesh, and cluster security."},
+    {"number": 7, "slug": "vol-7", "doc": "JmwgPsKS7xhEhYuAyseqmu", "published": false, "title": "Platform and Capstone", "summary": "Helm, Kustomize and GitOps, observability, operators, and a capstone that ties it together."}
+  ],
+  "private": {
+    "HfBybHNLV64ypaa1Va8cJs": "Instructor Companion (answer keys) — shared with lecturers on request",
+    "SVS4bm5LuQDWgJYjp8gMd7": "Kubernetes Field Guide — not yet migrated"
+  }
+}
