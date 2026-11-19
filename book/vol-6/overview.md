@@ -54,4 +54,4 @@ Versions tested on 2026-11-17 on Ubuntu 26.04 under WSL2 (kernel 6.18.58.1-micro
 | Falco | 0.45.2 (chart 9.2.2), modern eBPF driver | 6.3 |
 | registry | `registry:2`, plain HTTP, lab only | 6.3 |
 
-What was **not** run, and is marked as targeted where it appears: a native Ubuntu 24.04 host, plain Docker Engine (the `kind load docker-image` path), and the CKA exam environment. Calico, Flannel, Istio, OPA Gatekeeper and Harbor have project cards only; you do not install them. Image downloads dominate the time: the first Cilium install pulled about 1 GB per node and took 6 minutes on the test network.
+What was **not** run, and is marked as targeted where it appears: the CKA exam environment. Ubuntu 24.04 with plain Docker Engine was added on 2026-11-19: the Milestone 6 reference solution passed all 18 checks there. Calico, Flannel, Istio, OPA Gatekeeper and Harbor have project cards only; you do not install them. Image downloads dominate the time: the first Cilium install pulled about 1 GB per node and took 6 minutes on the test network.

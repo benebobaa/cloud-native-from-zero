@@ -53,7 +53,7 @@ for n in control-plane worker worker2; do
 done
 ```
 
-On a plain Docker Engine, `kind load docker-image wallet:v1 --name cnlab-vol5` does the same. On the Docker Desktop of the test machine it failed with a content-digest error, so this lab used the pipe above.
+`kind load docker-image wallet:v1 --name cnlab-vol5` does the same on plain Docker Engine (tested on 29.10.0, 2026-11-19). It failed with a content-digest error on the Docker Desktop of the test machine, and on Docker Engine it fails the same way for pulled images such as `postgres:17`. The pipe above works in every case, so the labs use it.
 
 Check the nodes. You should see three nodes `Ready`, one with the role `control-plane`, all at kubelet version `v1.37.0` and runtime `containerd://2.3.4`:
 

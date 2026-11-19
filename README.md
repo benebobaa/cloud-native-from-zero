@@ -12,7 +12,7 @@ A free, hands-on book from your first shell command to running Kubernetes at the
 | 3 | Distributed Systems | Published |
 | 4 | Containers | Published |
 | 5 | Kubernetes Core | Published |
-| 6 | Kubernetes Networking and Security | Published (Milestone 6 is being re-verified) |
+| 6 | Kubernetes Networking and Security | Published |
 | 7 | Platform and Capstone | Published |
 | | Kubernetes Field Guide | Published: 89 cards, one per built-in resource, component and mechanism, plus CKA, CKAD and KCNA drills |
 

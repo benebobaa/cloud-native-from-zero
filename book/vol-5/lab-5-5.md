@@ -4,7 +4,7 @@
 
 You will look inside a real kubeadm control-plane node, back up etcd and restore it, empty a node without losing a request, and then build a two-machine cluster by hand and swap its container runtime.
 
-**Versions tested** (2026-11-16, replayed 2026-11-17 and 2026-11-18, Ubuntu 26.04 on WSL2 with Docker Desktop; parts A to C): kind v0.33.0, node image `kindest/node:v1.37.0` (kubeadm v1.37.0, containerd v2.3.4, etcd 3.7.0), kubectl v1.37.1. Every output in parts A to C came from those runs. The replays of 2026-11-17 and 2026-11-18 matched them except where the text says otherwise (A4, B3, B4 and C3 changed after the replays; A2 and B1 differ only in numbers); Break it was not part of the replays. Node names, IDs and timestamps differ on your machine; the shapes do not.
+**Versions tested** (2026-11-16, replayed 2026-11-17 and 2026-11-18, Ubuntu 26.04 on WSL2 with Docker Desktop; parts A to C. Part B replayed again on 2026-11-19 on Ubuntu 24.04.5 LTS with Docker Engine 29.10.0 from Docker's apt repository, with the same result): kind v0.33.0, node image `kindest/node:v1.37.0` (kubeadm v1.37.0, containerd v2.3.4, etcd 3.7.0), kubectl v1.37.1. Every output in parts A to C came from those runs. The replays of 2026-11-17 and 2026-11-18 matched them except where the text says otherwise (A4, B3, B4 and C3 changed after the replays; A2 and B1 differ only in numbers); Break it was not part of the replays. Node names, IDs and timestamps differ on your machine; the shapes do not.
 
 **Versions targeted, not run on the test machine** (part D): Ubuntu 24.04 LTS on two VMs, kubeadm, kubelet and kubectl 1.37 from the `pkgs.k8s.io` v1.37 repository, CRI-O v1.37, the Flannel Pod network. The steps are copied from the official pages linked in part D. We have not executed them, so read the expected result there as what the documentation promises.
 
@@ -189,7 +189,7 @@ docker exec cnlab-vol5-control-plane mv /etc/kubernetes/manifests/kube-apiserver
 until [ -z "$(docker exec cnlab-vol5-control-plane crictl ps -q --name kube-apiserver)" ]; do sleep 1; done
 ```
 
-The loop ended after 31 s on the test machine, in both runs. Now point etcd at the new folder. etcd is a static Pod too, so editing its manifest restarts it. Remember the old container ID, change the `--data-dir` flag, read the line back and wait for a new container:
+The loop ended after 30 to 31 s on the test machines, in all three runs. Now point etcd at the new folder. etcd is a static Pod too, so editing its manifest restarts it. Remember the old container ID, change the `--data-dir` flag, read the line back and wait for a new container:
 
 ```bash
 OLD=$(docker exec cnlab-vol5-control-plane crictl ps -q --name '^etcd$')
@@ -202,7 +202,7 @@ until NEW=$(docker exec cnlab-vol5-control-plane crictl ps -q --name '^etcd$'); 
 18:    - --data-dir=/var/lib/etcd/restored
 ```
 
-The new etcd container started 13 to 15 s after the edit. Last, put the API server manifest back, wait until it is ready, and look at the result:
+The new etcd container started 13 to 16 s after the edit. Last, put the API server manifest back, wait until it is ready, and look at the result:
 
 ```bash
 docker exec cnlab-vol5-control-plane mv /etc/kubernetes/kube-apiserver.yaml.off /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -212,7 +212,7 @@ kubectl get configmap
 kubectl -n wallet get pods
 ```
 
-Real output of the replay on 2026-11-18 (the API server answered 5 s after its manifest came back):
+Real output of the replay on 2026-11-18 (the API server answered 5 s after its manifest came back; 7 s in the 2026-11-19 replay):
 
 ```text
 NAME    DATA   AGE

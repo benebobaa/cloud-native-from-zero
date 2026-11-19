@@ -74,8 +74,7 @@
       "slug": "milestone-6",
       "title": "Milestone 6",
       "kind": "milestone",
-      "file": "b78a7a7f-165b",
-      "hold": "The reference solution for this milestone passed 17 of 18 checks on a real cluster; the last fix is waiting for a clean re-run on Linux. This page goes up once all 18 pass."
+      "file": "b78a7a7f-165b"
     },
     {
       "slug": "glossary",

@@ -8,6 +8,8 @@ You hand over a wallet that a security reviewer can attack from inside the clust
 
 **Starting point.** The cluster and manifests of Labs 6.1 to 6.3 (a kind cluster with Cilium, the `wallet` namespace with `wallet-api`, `wallet-worker` and `postgres`, image `wallet:v1`). Rebuild from your repo with the script you write in deliverable 9; do not hand over a cluster you hand-edited.
 
+**Versions tested** (2026-11-19, Ubuntu 24.04.5 LTS on arm64 in a virtual machine, Docker Engine 29.10.0 from Docker's apt repository): the reference solution, an `up.sh` and a `check.sh` like the ones you write, built everything from an empty machine in 9.5 minutes and passed all 18 checks. kind v0.33.0, node image `kindest/node:v1.37.0`, kubectl v1.37.1, Helm v4.3.1, Cilium 1.20.4, Gateway API v1.6.3, Linkerd edge-26.11.2, Kyverno v1.20.0, cosign v2.6.1, Falco 0.45.2 (modern eBPF driver), `registry:2`.
+
 ## Deliverables
 
 Put everything in one directory of your wallet repository, `milestone6/`.

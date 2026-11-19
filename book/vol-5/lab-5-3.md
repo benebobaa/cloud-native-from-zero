@@ -6,7 +6,7 @@ You will build a Service for three web Pods and follow one request from its name
 
 **Versions tested** (2026-11-16, replayed 2026-11-17 and 2026-11-18, Ubuntu 26.04 on WSL2, Docker Desktop): kind v0.33.0 with `kindest/node:v1.37.0` (Kubernetes 1.37.0, kube-proxy in iptables mode, CoreDNS 1.14.6), kubectl v1.37.1, `busybox:1.37`, and `wallet:v1` used only as a Python web server. Every output below was captured in those runs. Pod IPs and chain names differ on your cluster; the shapes do not. The replay on 2026-11-17 ran the commands of Parts A to E and Break it as typed, except that its `sed` pipe for the CoreDNS `log` line matched nothing (see Part D). Not reproduced in that replay: the `conntrack` lines of Part B, which come from the 2026-11-16 run. The Part D lookups, with the fixed `sed` pipe, and their query-log lines were run again on 2026-11-18.
 
-**Before you start:** you need the three-node cluster from Lab 5.1 (re-create it with the same `kind create cluster --name cnlab-vol5 --image kindest/node:v1.37.0 --config kind-3nodes.yaml` if you deleted it). Load the two images into every node with the method from Lab 5.2. On plain Docker Engine, `kind load docker-image` does the same.
+**Before you start:** you need the three-node cluster from Lab 5.1 (re-create it with the same `kind create cluster --name cnlab-vol5 --image kindest/node:v1.37.0 --config kind-3nodes.yaml` if you deleted it). Load the two images into every node with the method from Lab 5.2. On plain Docker Engine, `kind load docker-image` works for `wallet:v1` but not for `postgres:17` (Lab 5.1 explains why the labs use the pipe).
 
 ```bash
 docker pull busybox:1.37

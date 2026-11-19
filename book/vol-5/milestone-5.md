@@ -8,7 +8,7 @@ When you finish, one namespace named `wallet` holds: two Deployments (`wallet-ap
 
 **Versions tested** (2026-11-16, replayed 2026-11-17, Ubuntu 26.04 on WSL2, Docker Desktop): kind v0.33.0, node image `kindest/node:v1.37.0` (Kubernetes 1.37.0, containerd 2.3.4, etcd 3.7.0), kubectl v1.37.1, `wallet:v1` built from `wallet/`, `postgres:17`. Cluster: 1 control-plane node and 2 workers. The manifests in this tab and the numbers in What to expect come from that run. Postgres is not loaded with `kind load` (see the Hints); the nodes pull it. The renumbered check script printed in this tab (R1.1 to R8.1) was run on 2026-11-17 on a fresh kind cluster, after manifests 00 to 05 and a snapshot: passed 23, failed 0, MILESTONE 5 CHECKS: ALL PASS.
 
-**Before you start:** a 3-node kind cluster (`kind create cluster --config kind-3nodes.yaml`, the file from Lab 5.1), `wallet:v1` loaded into it with `kind load docker-image wallet:v1`, and the Lab 5.5 snapshot habit. Budget 3 to 4 hours.
+**Before you start:** a 3-node kind cluster (`kind create cluster --config kind-3nodes.yaml`, the file from Lab 5.1), `wallet:v1` loaded into every node (Lab 5.1 shows how), and the Lab 5.5 snapshot habit. Budget 3 to 4 hours.
 
 ## What you build
 
@@ -81,7 +81,7 @@ Add one more file, `design-note.md`, of at most one page, answering three questi
 - **The hostname is the Service name.** `postgres` resolves through CoreDNS to the Pod because the Service is headless (Ch 5.3). Name it exactly as `serviceName` in the StatefulSet.
 - **Name the container port.** Use `name: http` on the API port, then `targetPort: http` in the Service and `port: http` in the probes; you change the number in one place.
 - **Probes.** The API serves `/healthz` (process alive, no database) and `/readyz` (database reachable). Using `/readyz` for liveness would restart healthy Pods whenever the database is down, a classic outage amplifier (Ch 5.2).
-- **`kind load` and Postgres.** Load `wallet:v1` with `kind load docker-image wallet:v1`. If `kind load docker-image postgres:17` fails with `content digest ... not found` (Docker Desktop with the containerd image store), skip it: the nodes can pull from Docker Hub, or run `docker exec <node> crictl pull postgres:17` on each worker.
+- **`kind load` and Postgres.** Load `wallet:v1` with `kind load docker-image wallet:v1`, or with the pipe from Lab 5.1 if that fails. If `kind load docker-image postgres:17` fails with `content digest ... not found` (Docker 29 with the containerd image store: it did on Docker Desktop and on Docker Engine 29.10.0), skip it: the nodes can pull from Docker Hub, or run `docker exec <node> crictl pull postgres:17` on each worker.
 - **Find your drain target before you drain.** `kubectl -n wallet get pod -o wide` shows the node of each Pod. Drain a worker that is not the node of `postgres-0`, with `--ignore-daemonsets --delete-emptydir-data`. Uncordon it afterwards.
 - **Read the scheduler.** When a Pod stays `Pending`, `kubectl -n wallet describe pod <name>` ends with the scheduler's reasons, one per node (Ch 5.4).
 - **Snapshot flags.** Copy the `etcdctl` command with its four TLS flags from Lab 5.5 and run it with `kubectl -n kube-system exec etcd-<control-plane-node> -- etcdctl ...`. The snapshot lands in `/var/lib/etcd` on the node.

@@ -41,7 +41,7 @@ You need Vol 5 and Vol 6 finished, and the wallet image from Vol 4 built.
 - Run one lab at a time. Delete the kind cluster at the end of each lab (`kind delete cluster --name cnlab`); the labs do not depend on each other's cluster state.
 - Lab 7.1 installs Argo CD (about 1 GB of memory when idle), Lab 7.2 adds Prometheus, Grafana and Jaeger, Lab 7.3 adds KEDA. Do not install them all in one cluster.
 - Each lab needs a few hundred megabytes of images. Pull them on a good network before the lecture.
-- On Docker Desktop, `kind load docker-image` can fail with a content-digest error. The labs then use `docker save` and `kind load image-archive`; each lab says which method it used.
+- `kind load docker-image` can fail with a content-digest error: on Docker Desktop it did on the test machine, and on Docker Engine 29.10.0 it does for pulled images such as `postgres:17` (it works there for `wallet:v1`). The labs then use `docker save` and `kind load image-archive`; each lab says which method it used.
 
 ## Versions
 

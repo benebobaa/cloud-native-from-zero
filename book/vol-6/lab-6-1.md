@@ -2,7 +2,7 @@
 
 **Goal.** Build a two-node kind cluster with no default network and no kube-proxy, let Cilium take over both jobs, watch every flow of the wallet in Hubble, then lock the wallet down with default-deny NetworkPolicies and prove each rule with a command. Time: about 3 to 4 hours, of which 15 minutes are image downloads.
 
-**Versions tested** (run on 2026-11-17): kind v0.33.0, node image `kindest/node:v1.37.0` (Kubernetes 1.37.0), kubectl v1.37.1, Helm v4.3.1, Cilium 1.20.4 (Helm chart 1.20.4, Hubble CLI v1.20.4 shipped inside the agent image), wallet `wallet:v1` from Vol 3. Docker 29.9.2 on Docker Desktop with WSL2 (kernel 6.18.58.1-microsoft-standard-WSL2). Target OS Ubuntu 24.04 LTS; the test machine ran Ubuntu 26.04. Not run here: a native Ubuntu 24.04 host with plain Docker Engine, so the `kind load docker-image` command is shown as the normal path and the pipe workaround as the tested one.
+**Versions tested** (run on 2026-11-17): kind v0.33.0, node image `kindest/node:v1.37.0` (Kubernetes 1.37.0), kubectl v1.37.1, Helm v4.3.1, Cilium 1.20.4 (Helm chart 1.20.4, Hubble CLI v1.20.4 shipped inside the agent image), wallet `wallet:v1` from Vol 3. Docker 29.9.2 on Docker Desktop with WSL2 (kernel 6.18.58.1-microsoft-standard-WSL2). Target OS Ubuntu 24.04 LTS; the test machine ran Ubuntu 26.04. Replayed on 2026-11-19 on Ubuntu 24.04.5 LTS (arm64, in a virtual machine) with Docker Engine 29.10.0 from Docker's apt repository: the Milestone 6 reference script, which runs every step of Labs 6.1 to 6.3, passed all 18 checks.
 
 ### What you will build
 
@@ -269,7 +269,7 @@ spec:
             - {name: DATABASE_URL, value: "postgresql://wallet:$(POSTGRES_PASSWORD)@postgres:5432/wallet"}
 ```
 
-The `wallet:v1` image must be inside the kind nodes. On plain Docker Engine, `kind load docker-image wallet:v1 --name cnlab-vol6` is the normal way. On Docker Desktop that command failed with a content-digest error on the test machine, so the tested method pipes the image into containerd on the worker (it took 52 seconds). The `postgres:17` image can be pulled by the node itself; that took about 4 minutes here.
+The `wallet:v1` image must be inside the kind nodes. `kind load docker-image wallet:v1 --name cnlab-vol6` worked on plain Docker Engine 29.10.0 (tested 2026-11-19) but failed with a content-digest error on Docker Desktop, so the method shown pipes the image into containerd on the worker, which works on both (it took 52 seconds on Docker Desktop). The `postgres:17` image can be pulled by the node itself; that took about 4 minutes here.
 
 ```bash
 docker save wallet:v1 | docker exec -i cnlab-vol6-worker ctr -n k8s.io images import -

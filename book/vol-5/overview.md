@@ -38,6 +38,6 @@ You need Vol 4 finished: Docker working, the `wallet:v1` image built from `walle
 
 **Versions tested** (2026-11-16) for every kind step, on Ubuntu 26.04 under WSL2 with Docker Desktop. The kubeadm-on-VMs and CRI-O steps of Lab 5.5 are **versions targeted**: they follow the official docs and were not run on this test machine. Each lab states exactly which of its steps were run.
 
-**One Docker Desktop quirk.** `kind load docker-image` failed on the test machine with a content-digest error. Each lab shows the workaround it used: pipe the image into the node with `docker save wallet:v1 | docker exec -i <node> ctr -n k8s.io images import -`. On plain Docker Engine `kind load docker-image wallet:v1` normally works.
+**One Docker quirk.** `kind load docker-image` can fail with a content-digest error (`content digest ... not found`). On Docker Desktop it failed for every image on the test machine. On plain Docker Engine 29.10.0 from Docker's apt repository (tested 2026-11-19) it worked for `wallet:v1`, which you build yourself, and failed for images Docker pulled, such as `postgres:17`. Each lab therefore uses a pipe that works in every case: `docker save <image> | docker exec -i <node> ctr -n k8s.io images import -`.
 
 **Certification point.** The optional KCNA exam fits after week 22, when this volume ends. CKA and CKAD come after week 28 ([CNCF curriculum](https://github.com/cncf/curriculum)).

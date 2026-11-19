@@ -6,7 +6,7 @@ By the end of this lab you have a Linux machine, a terminal you are comfortable 
 
 This lab is mostly installation. It is still the most important lab of the book: every later lab assumes it works.
 
-**Versions tested** (2026-11-16): Ubuntu 24.04 LTS, Docker Engine from Docker's apt repository, kind v0.33.0, node image `kindest/node:v1.37.0`, kubectl v1.37.1. Step 3 and the Checkpoint were run on 2026-11-16 on WSL2 with Docker Desktop: the three-node cluster was Ready in under two minutes.
+**Versions tested** (2026-11-16): Ubuntu 24.04 LTS, Docker Engine from Docker's apt repository, kind v0.33.0, node image `kindest/node:v1.37.0`, kubectl v1.37.1. Step 3 and the Checkpoint were run on 2026-11-16 on WSL2 with Docker Desktop: the three-node cluster was Ready in under two minutes. On 2026-11-19 Steps 2 and 3, the Checkpoint and Break it were run again on a fresh Ubuntu 24.04.5 LTS (arm64, in a virtual machine) with Docker Engine 29.10.0 installed by the apt-repository method: every command worked as printed, and the three nodes were Ready 16 s after `kind create cluster` returned.
 
 - [ ] Ubuntu 24.04 is running and you can open a terminal
 - [ ] git is installed and knows your name
